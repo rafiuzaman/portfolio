@@ -7,7 +7,15 @@
 #!/bin/bash
 
 read -p "Enter the URL to download or type 'exit' to quit: " myUrl
+echo $myUrl
 
-read -p "Enter the download location: " myLoc
+while [ "$myUrl" != exit ] 
+do
 
-wget -O $myLoc $myUrl
+    read -p "Enter the download location: " myLoc
+
+    wget -O $myLoc $myUrl
+
+    read -p "Enter the URL to download or type 'exit' to quit: " myUrl
+
+done
